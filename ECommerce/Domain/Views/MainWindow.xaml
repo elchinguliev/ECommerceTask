@@ -1,0 +1,67 @@
+﻿<Window x:Class="ECommerce.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ECommerce" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <Border BorderBrush="Red" BorderThickness="0,0,0,5">
+                <StackPanel Width="800" Orientation="Horizontal">
+                    <TextBlock Foreground="Red" Padding="10" HorizontalAlignment="Center" FontSize="30" FontWeight="UltraBlack">E-Commerce App </TextBlock>
+                    <Button Command="{Binding ToLowerCommand}" Content="{Binding FilterText,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Background="Red" Padding="20" Foreground="White" FontSize="25" FontWeight="UltraBlack"></Button>
+                    <Button x:Name="Admin" Command="{Binding AdminCommand}" Margin="20,0,0,0" Content="Admin" Background="red" Foreground="White" Padding="20" FontSize="25" FontWeight="UltraBlack"></Button>
+                </StackPanel>
+            </Border>
+            <ListView ItemsSource="{Binding AllProducts}" SelectedItem="{Binding SelectedProduct,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Padding="10" Background="White" BorderBrush="red" BorderThickness="5,0,5,5" >
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding SelectProductCommand}"></i:InvokeCommandAction>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Name" Width="200">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock FontSize="18" HorizontalAlignment="Center"
+                                           Padding="5,2" Text="{Binding Name}"
+                                           ></TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+
+                        <GridViewColumn Header="Price" Width="200">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock FontSize="18" HorizontalAlignment="Center"
+                                           Padding="5,2" Text="{Binding Price}"
+                                           ></TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Discount" Width="200">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+
+                                        <TextBlock FontSize="18" HorizontalAlignment="Center"
+                                            Text="{Binding Discount}"
+                                           ></TextBlock>
+                                        <TextBlock FontSize="18" HorizontalAlignment="Center"
+                                            Text="%"
+                                           ></TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+
+            </ListView>
+           
+        </StackPanel>
+    </Grid>
+</Window>
