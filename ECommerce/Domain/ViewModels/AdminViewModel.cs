@@ -124,7 +124,8 @@ namespace ECommerce.Domain.ViewModels
             });
             UpdateCommand = new RelayCommand((obj) =>
             {
-
+                //UpdateProduct updayeProductWindow = new UpdateProduct();
+                //var vm = new UpdateProductViewModel(_productRepo, product);
 
             });
 

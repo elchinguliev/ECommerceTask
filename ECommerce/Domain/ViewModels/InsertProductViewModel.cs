@@ -38,7 +38,7 @@ namespace ECommerce.Domain.ViewModels
 
                 };
                 _productRepo.AddData(product);
-                MessageBox.Show("Product has been added!");
+                MessageBox.Show("Produc has been added successfully");
                 ip.Close();
             });
 
