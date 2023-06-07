@@ -28,17 +28,8 @@ namespace ECommerce.Domain.ViewModels
             InsertCommand=new RelayCommand((obj) =>
             {
                 var window = obj as Window;
-
-                //var prodcutName = ip.insertNameTxt.Text;
-                //var description = ip.insertDescriptionTxt.Text;
-                //var price = int.Parse(ip.insertPriceTxt.Text);
-                //var discount = int.Parse(ip.insertDiscountTxt.Text);
-                //int quantity = int.Parse(ip.insertQuantityTxt.Text);
-                //int id = _productRepo.GetAll().Last().Id;
-
                 Product product = new Product
                 {
-                   // Id=++id,
                     Name=ProductName,
                     Description=ProductDescription,
                     Price=ProductPrice,
@@ -47,9 +38,8 @@ namespace ECommerce.Domain.ViewModels
 
                 };
                 _productRepo.AddData(product);
-
-
-
+                MessageBox.Show("Product has been added!");
+                ip.Close();
             });
 
 
