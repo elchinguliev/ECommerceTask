@@ -72,7 +72,7 @@ namespace ECommerce.Domain.ViewModels
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show($"{ex.Message}", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        MessageBox.Show($"{ex.Message}");
                     }
                 }
 

@@ -33,7 +33,8 @@ namespace ECommerce.Domain.Concretes
             var products = from p in _context.Products
                            orderby p.Name
                            select p;
-            return new ObservableCollection<Product>(products);
+             return new ObservableCollection<Product>(products);
+            
         }
 
         public Product GetData(int id)

@@ -31,7 +31,7 @@ namespace ECommerce.Domain.ViewModels
 
                 var prodcutName = (ip.insertNameTxt.Text);
                 var description = ip.insertDescriptionTxt.Text;
-                var priceTxt = ip.insertPriceTxt.Text;
+                string priceTxt = ip.insertPriceTxt.Text;
                 int price = int.Parse(priceTxt);
                 var discounText = ip.insertDiscountTxt.Text;
                 int discount = int.Parse(discounText);

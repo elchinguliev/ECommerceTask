@@ -26,8 +26,20 @@ namespace ECommerce.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-O86GR9L;Initial Catalog=ECommerceDb;Integrated Security=True;" +
+            "Connect Timeout=30;Encrypt=False;TrustServerCertificate=False")]
+        public string ECommerceDbConnectionString1 {
+            get {
+                return ((string)(this["ECommerceDbConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=ECommerceDb;Integrated Securit" +
-            "y=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False")]
+            "y=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;Application" +
+            "Intent=ReadWrite;MultiSubnetFailover=False")]
         public string ECommerceDbConnectionString {
             get {
                 return ((string)(this["ECommerceDbConnectionString"]));
@@ -37,11 +49,11 @@ namespace ECommerce.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-O86GR9L;Initial Catalog=ECommerceDb;Integrated Security=True;" +
-            "Connect Timeout=30;Encrypt=False;TrustServerCertificate=False")]
-        public string ECommerceDbConnectionString1 {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=ECommerceDb;Integrated Securit" +
+            "y=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False")]
+        public string ECommerceDbConnectionString2 {
             get {
-                return ((string)(this["ECommerceDbConnectionString1"]));
+                return ((string)(this["ECommerceDbConnectionString2"]));
             }
         }
     }
