@@ -29,14 +29,11 @@ namespace ECommerce.Domain.ViewModels
             {
                 var window = obj as Window;
 
-                var prodcutName = (ip.insertNameTxt.Text);
+                var prodcutName = ip.insertNameTxt.Text;
                 var description = ip.insertDescriptionTxt.Text;
-                string priceTxt = ip.insertPriceTxt.Text;
-                int price = int.Parse(priceTxt);
-                var discounText = ip.insertDiscountTxt.Text;
-                int discount = int.Parse(discounText);
-                var quantityText = ip.insertQuantityTxt.Text;
-                int quantity = int.Parse(quantityText);
+                var price = int.Parse(ip.insertPriceTxt.Text);
+                var discount = int.Parse(ip.insertDiscountTxt.Text);
+                int quantity = int.Parse(ip.insertQuantityTxt.Text);
                 int id = _productRepo.GetAll().Last().Id;
 
                 Product product = new Product
