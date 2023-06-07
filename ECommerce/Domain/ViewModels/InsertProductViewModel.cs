@@ -29,21 +29,21 @@ namespace ECommerce.Domain.ViewModels
             {
                 var window = obj as Window;
 
-                var prodcutName = ip.insertNameTxt.Text;
-                var description = ip.insertDescriptionTxt.Text;
-                var price = int.Parse(ip.insertPriceTxt.Text);
-                var discount = int.Parse(ip.insertDiscountTxt.Text);
-                int quantity = int.Parse(ip.insertQuantityTxt.Text);
-                int id = _productRepo.GetAll().Last().Id;
+                //var prodcutName = ip.insertNameTxt.Text;
+                //var description = ip.insertDescriptionTxt.Text;
+                //var price = int.Parse(ip.insertPriceTxt.Text);
+                //var discount = int.Parse(ip.insertDiscountTxt.Text);
+                //int quantity = int.Parse(ip.insertQuantityTxt.Text);
+                //int id = _productRepo.GetAll().Last().Id;
 
                 Product product = new Product
                 {
-                    Id=++id,
-                    Name=prodcutName,
-                    Description=description,
-                    Price=price,
-                    Discount=discount,
-                    Quantity=quantity
+                   // Id=++id,
+                    Name=ProductName,
+                    Description=ProductDescription,
+                    Price=ProductPrice,
+                    Discount=ProductDiscount,
+                    Quantity=ProductQuantity,
 
                 };
                 _productRepo.AddData(product);
@@ -52,6 +52,57 @@ namespace ECommerce.Domain.ViewModels
 
             });
 
+
+
+        }
+
+        private string name;
+
+        public string Name
+        {
+            get { return name; }
+            set { name = value; OnPropertyChanged(); }
+        }
+
+
+        private string productName;
+
+        public string ProductName
+        {
+            get { return productName; }
+            set { productName = value; OnPropertyChanged(); }
+        }
+
+        private decimal productPrice;
+
+        public decimal ProductPrice
+        {
+            get { return productPrice; }
+            set { productPrice = value; OnPropertyChanged(); }
+        }
+
+        private int productQuantity;
+
+        public int ProductQuantity
+        {
+            get { return productQuantity; }
+            set { productQuantity = value; OnPropertyChanged(); }
+        }
+
+        private string productDescription;
+
+        public string ProductDescription
+        {
+            get { return productDescription; }
+            set { productDescription = value; OnPropertyChanged(); }
+        }
+
+        private int productDiscount;
+
+        public int ProductDiscount
+        {
+            get { return productDiscount; }
+            set { productDiscount = value; OnPropertyChanged(); }
         }
 
 
