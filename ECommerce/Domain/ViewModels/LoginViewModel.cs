@@ -18,6 +18,7 @@ namespace ECommerce.Domain.ViewModels
     {
         private readonly IAdminRepository _adminRepo;
         private readonly ICustomerRepository _customerRepo;
+        EECommerceDataContext _context=new EECommerceDataContext();
 
         public RelayCommand SignIn { get; set; }
 
@@ -32,20 +33,40 @@ namespace ECommerce.Domain.ViewModels
 
             SignIn = new RelayCommand((obj) =>
             {
-
+                bool userFount= _context.Admins.Any(admin=>admin.Username==username && admin.Password==password);
+                if (userFount)
+                {
                         AdminWindow window = new AdminWindow();
 
                         AdminViewModel vm = new AdminViewModel();
 
                         window.DataContext = vm;
                         window.ShowDialog();
-     
-            });
+                }
+                else
+                {
+                    
+                    MessageBox.Show("Such a user is not founded ! \nEnter your login information correctly ");
+                    
+                }
+    });
 
 
-         
+    }
+        private string username;
 
-
+        public string Username
+        {
+            get { return username; }
+            set { username = value; }
         }
+        private string password;
+
+        public string Password
+        {
+            get { return password; }
+            set { password = value; }
+        }
+
     }
 }
